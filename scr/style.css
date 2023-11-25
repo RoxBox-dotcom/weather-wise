@@ -5,15 +5,21 @@ body {
 
 .main-heading {
   font-size: 40px;
+  text-align: center;
 }
 
 .main-app {
   background: rgb(247, 245, 245);
-  max-width: 800px;
+  max-width: 700px;
   margin: 20px auto;
   padding: 35px;
   border-radius: 20px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.1);
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
 }
 
 .search-form-input {
@@ -24,7 +30,7 @@ body {
   padding: 15px;
   width: 55%;
   font-size: 15px;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
 }
 
 .search-form-button {
@@ -33,7 +39,7 @@ body {
   border-radius: 5px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.1);
   padding: 15px;
-  margin: 20px 0;
+  margin: 20px 0 0 5px;
   width: 120px;
   font-size: 15px;
   font-weight: bold;
@@ -42,15 +48,25 @@ body {
 
 main h1 {
   color: #434381;
+  margin: 20px 0 0 0;
 }
 
 .weather-data {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  margin: 30px 0 0 30px;
 }
 
 .current-temperature {
-    
+  font-size: 60px;
+  margin: 20px 0 20px 0;
+  font-weight: bold;
+}
+
+.weather-conditions {
+  line-height: 30px;
+  color: rgb(65, 61, 61);
+  margin: 20px 0 0 120px;
 }
 
 footer {
