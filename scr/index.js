@@ -8,7 +8,17 @@ function searchCity(city) {
 function displayTemp(response) {
   let temperatureElement = document.querySelector("#current-temperature");
   let temp = Math.round(response.data.temperature.current);
+  let descriptionElement = document.querySelector(
+    "#weather-conditions-description"
+  );
+  let windElement = document.querySelector("#wind");
+  let humidityElement = document.querySelector("#humidity");
+  console.log(response.data);
+
   temperatureElement.innerHTML = temp;
+  descriptionElement.innerHTML = response.data.condition.description;
+  windElement.innerHTML = response.data.wind.speed;
+  humidityElement.innerHTML = response.data.temperature.humidity;
 }
 
 function handleSearchSubmit(event) {
@@ -23,3 +33,5 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Johannesburg");
+
+
