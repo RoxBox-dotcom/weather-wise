@@ -13,12 +13,30 @@ function displayTemp(response) {
   );
   let windElement = document.querySelector("#wind");
   let humidityElement = document.querySelector("#humidity");
-  console.log(response.data);
+  let dateElement = document.querySelector("#current-date");
+  let date = new Date(response.data.time * 1000);
 
   temperatureElement.innerHTML = temp;
   descriptionElement.innerHTML = response.data.condition.description;
   windElement.innerHTML = response.data.wind.speed;
   humidityElement.innerHTML = response.data.temperature.humidity;
+  dateElement.innerHTML = formatDate(date);
+}
+
+function formatDate(date) {
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
 
 function handleSearchSubmit(event) {
@@ -33,5 +51,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Johannesburg");
-
-
