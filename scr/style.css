@@ -58,9 +58,16 @@ main h1 {
 }
 
 .current-temperature-container {
-  font-size: 50px;
+  font-size: 40px;
   margin-top: 45px;
   font-weight: bold;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; 
 }
 
 .weather-conditions {
