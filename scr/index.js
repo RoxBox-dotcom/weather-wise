@@ -73,3 +73,26 @@ function updateTemperatureCircle(temperature) {
       "radial-gradient(circle at 12.3% 19.3%, rgb(85, 88, 218) 0%, rgb(95, 209, 249) 100.2%)";
   }
 }
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+    <div class="row">
+      <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+        <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" alt="" width="30" />
+        <div class="weather-forecast-temperature"> <span class="weather-forecast-temperature-max">18°</span> <span class="weather-forecast-temperature-min">12°</span></div>
+      </div>
+    </div>
+`;
+  });
+  forecastElement.innerHTML = forecastHtml;
+}
+
+displayForecast();

@@ -10,7 +10,7 @@ body {
 
 .main-app {
   background: rgb(247, 245, 245);
-  max-width: 700px;
+  max-width: 650px;
   margin: 60px auto;
   padding: 45px;
   border-radius: 20px;
@@ -80,6 +80,8 @@ main h1 {
 .weather-forecast {
   margin-top: 40px;
   text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 .weather-forecast-date {
