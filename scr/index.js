@@ -23,6 +23,15 @@ function displayTemp(response) {
   dateElement.innerHTML = formatDate(date);
 
   updateTemperatureCircle(temp);
+  getForecast(response.data.city);
+}
+
+function handleSearchSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-form-input");
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = searchInput.value;
+  searchCity(searchInput.value);
 }
 
 function formatDate(date) {
@@ -44,14 +53,6 @@ function formatDate(date) {
   }
 
   return `${day} ${hours}:${minutes}`;
-}
-
-function handleSearchSubmit(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-form-input");
-  let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = searchInput.value;
-  searchCity(searchInput.value);
 }
 
 let searchFormElement = document.querySelector("#search-form");
@@ -96,3 +97,10 @@ function displayForecast() {
 }
 
 displayForecast();
+
+function getForecast(city) {
+  let apiKey = "co008925a4etb7034fb83ba3509c17f3";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  console.log(apiURL);
+  axios(apiURL).then(displayForecast);
+}
