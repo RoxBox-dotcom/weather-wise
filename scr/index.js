@@ -15,12 +15,14 @@ function displayTemp(response) {
   let humidityElement = document.querySelector("#humidity");
   let dateElement = document.querySelector("#current-date");
   let date = new Date(response.data.time * 1000);
+  let cityElement = document.querySelector("#city");
 
   temperatureElement.innerHTML = temp;
   descriptionElement.innerHTML = response.data.condition.description;
   windElement.innerHTML = response.data.wind.speed;
   humidityElement.innerHTML = response.data.temperature.humidity;
   dateElement.innerHTML = formatDate(date);
+  cityElement.innerHTML = response.data.city;
 
   updateTemperatureCircle(temp);
   getForecast(response.data.city);
@@ -75,20 +77,23 @@ function updateTemperatureCircle(temperature) {
   }
 }
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
 
-  days.forEach(function (day) {
+  response.data.daily.forEach(function (day) {
     forecastHtml =
       forecastHtml +
       `
     <div class="row">
       <div class="col-2">
-        <div class="weather-forecast-date">${day}</div>
+        <div class="weather-forecast-date">Tue</div>
         <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" alt="" width="30" />
-        <div class="weather-forecast-temperature"> <span class="weather-forecast-temperature-max">18°</span> <span class="weather-forecast-temperature-min">12°</span></div>
+        <div class="weather-forecast-temperature"> <span class="weather-forecast-temperature-max">${Math.round(
+          day.temperature.maximum
+        )}°</span> <span class="weather-forecast-temperature-min">${Math.round(
+        day.temperature.minimum
+      )}°</span></div>
       </div>
     </div>
 `;
