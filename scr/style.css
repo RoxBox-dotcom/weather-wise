@@ -79,14 +79,20 @@ main h1 {
 
 .weather-forecast {
   margin-top: 40px;
-  text-align: center;
   display: flex;
   justify-content: space-around;
 }
 
 .weather-forecast-date {
+  text-align: center;
   font-size: 14px;
   color: rgb(65, 61, 61);
+}
+
+.weather-forecast-icon {
+  width: 35px;
+  display: block;
+  margin: 0 auto;
 }
 
 .weather-forecast-temperature {
