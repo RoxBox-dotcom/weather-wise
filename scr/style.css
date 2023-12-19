@@ -1,15 +1,15 @@
 body {
-  background: #dddde7;
   font-family: "Nanum Gothic", sans-serif;
+  background-color: #d2d2f3;
 }
 
 .main-heading {
-  font-size: 40px;
+  font-size: 42px;
   text-align: center;
 }
 
 .main-app {
-  background: rgb(247, 245, 245);
+  background: rgb(255, 255, 255);
   max-width: 650px;
   margin: 60px auto;
   padding: 45px;
@@ -23,7 +23,7 @@ body {
 }
 
 .search-form-input {
-  background-color: #dddde7;
+  background-color: #e9e9f5;
   border: none;
   border-radius: 5px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.1);
